@@ -1,0 +1,23 @@
+{
+  "name": "-projectportfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MelissaPatez/-projectPortfolio.git"
+  },
+  "keywords": ["MERN", "MongoDB", "Express", "React.js", "Node.js"],
+  "author": "Melissa Patez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MelissaPatez/-projectPortfolio/issues"
+  },
+  "homepage": "https://github.com/MelissaPatez/-projectPortfolio#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
