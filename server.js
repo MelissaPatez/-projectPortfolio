@@ -15,5 +15,5 @@ const PORT = process.env.PORT;
 app.use('/api', api)
 
 // rota front end  --> /api 
-
-app.listen(PORT);
+app.use(express.urlencoded({ extended: false }));
+app.listen(PORT); 
