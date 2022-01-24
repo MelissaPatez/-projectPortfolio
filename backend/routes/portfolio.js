@@ -74,7 +74,7 @@ router.get("/:slug", async (req, res) => {
 //Update
 router.patch("/:slug", async (req, res) => {
     try {
-        const updatePortfolio = await Portfolio.updateOne({
+        const updatedPortfolio = await Portfolio.updateOne({
             slug: req.params.slug 
         }, 
         {
@@ -84,6 +84,7 @@ router.patch("/:slug", async (req, res) => {
 
         res.json({
             success: true,
+
         })
 
     } catch (error) {
@@ -96,6 +97,24 @@ router.patch("/:slug", async (req, res) => {
     
 });
 
+//DELETE
+router.delete("/:slug", async (req, res) => {
+    try {
+        const deletedPortfolio = await Portfolio.deleteOne({slug: req.params.slug });
+
+        res.json({
+            success: true,
+            deleted: deletedPortfolio.deletedCount
+        })
+
+    } catch (error) {
+        res.json({
+            success: false,
+            message: err,
+            
+        });
+    }
+})
 
 
 
