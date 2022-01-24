@@ -1,27 +1,10 @@
 const router = require('express').Router();
 const { json } = require('body-parser');
+const req = require('express/lib/request');
 const Portfolio = require("../models/Portfolio");
 
-//lista dados do mongodb
-router.get("/", async (req, res) => {
-    try{
-        const portfolio = await Portfolio.find();
 
-        res.json({
-            success: true,
-            data: portfolio
-        });
-    }catch(err){
-        res.json({
-            success:false,
-            message: err,
-        })
-       
-    }
-    
-});
-
- //new portfolio
+ //new portfolio CREATE
 router.post("/", (req, res) => {
     const portfolio =  new Portfolio({
         title: req.body.title,
@@ -46,6 +29,45 @@ router.post("/", (req, res) => {
             });
             
         });
+});
+
+//READ ALL
+//lista todos os dados do mongodb
+router.get("/", async (req, res) => {
+    try{
+        const portfolio = await Portfolio.find();
+
+        res.json({
+            success: true,
+            data: portfolio
+        });
+    }catch(err){
+        res.json({
+            success:false,
+            message: err,
+        })
+       
+    }
+    
+});
+
+//READ 
+//listar apenas um dado
+router.get("/:slug", async (req, res) => {
+    try {
+        const portfolio = await Portfolio.findOne({ slug: req.params.slug });
+        res.json({
+            success: true,
+            data: portfolio
+        });
+
+    } catch (err) {
+        res.json({
+            success: false,
+            message: err,
+            
+        });
+    }
 });
 
 module.exports  = router;
