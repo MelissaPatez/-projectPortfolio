@@ -1,11 +1,24 @@
 const router = require('express').Router();
+const { json } = require('body-parser');
 const Portfolio = require("../models/Portfolio");
 
-router.get("/", (req, res) => {
+//lista dados do mongodb
+router.get("/", async (req, res) => {
+    try{
+        const portfolio = await Portfolio.find();
+
+        res.json({
+            success: true,
+            data: portfolio
+        });
+    }catch(err){
+        res.json({
+            success:false,
+            message: err,
+        })
+       
+    }
     
-    res.json({
-        success: true,
-    });
 });
 
  //new portfolio
@@ -15,6 +28,7 @@ router.post("/", (req, res) => {
         description: req.body.description
     });
 
+    
     //salvar, oq acontece quando da certo e errado
     portfolio
         .save()
