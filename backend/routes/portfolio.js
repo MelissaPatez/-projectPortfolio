@@ -25,7 +25,7 @@ router.get("/", async (req, res) => {
 router.post("/", (req, res) => {
     const portfolio =  new Portfolio({
         title: req.body.title,
-        description: req.body.description
+        description: req.body.description,
     });
 
     
