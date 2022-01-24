@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { json } = require('body-parser');
 const req = require('express/lib/request');
+const { updateOne } = require('../models/Portfolio');
 const Portfolio = require("../models/Portfolio");
 
 
@@ -69,5 +70,33 @@ router.get("/:slug", async (req, res) => {
         });
     }
 });
+
+//Update
+router.patch("/:slug", async (req, res) => {
+    try {
+        const updatePortfolio = await Portfolio.updateOne({
+            slug: req.params.slug 
+        }, 
+        {
+            title: req.body.title, 
+            description: req.body.description
+        })
+
+        res.json({
+            success: true,
+        })
+
+    } catch (error) {
+        res.json({
+            success: false,
+            message: err,
+            
+        });
+    }
+    
+});
+
+
+
 
 module.exports  = router;
