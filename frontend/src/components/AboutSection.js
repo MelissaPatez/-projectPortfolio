@@ -1,10 +1,14 @@
 import React from 'react'
+import styled from 'styled-components'
+
 
 const AboutSection = () => {
     return(
         <div>
-           <h2>Melissa Patez</h2>
-           <h2>Developer</h2> 
+
+                <h2>Melissa Patez</h2>
+                <h2>Developer</h2>
+
 
            <p>Texto descrição sobre Melissa Patez</p>
 
