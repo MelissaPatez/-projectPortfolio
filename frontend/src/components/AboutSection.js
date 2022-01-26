@@ -1,22 +1,27 @@
 import React from 'react'
-import styled from 'styled-components'
-
+import styled from 'styled-components'//css global
+import { About, Description, Image } from '../styles' // css focado na pag
 
 const AboutSection = () => {
     return(
-        <div>
-
+        <About>
+            <Description>
                 <h2>Melissa Patez</h2>
                 <h2>Developer</h2>
 
 
-           <p>Texto descrição sobre Melissa Patez</p>
+                <p>Texto descrição sobre Melissa Patez</p>
 
-           <button>Contact Me</button>
+                <button>Contact Me</button>
+            </Description>
+         
+            <Image>
+                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png" />
 
-           <img src="https://media.istockphoto.com/vectors/default-avatar-profile-icon-grey-photo-placeholder-hand-drawn-modern-vector-id1273297923?k=20&m=1273297923&s=170667a&w=0&h=ITbzCQKZ9n0UIXmJYOzl6ZLS0_JMrUrput2zF1Q_UlY=" />
+            </Image>
 
-        </div>
+
+        </About>
     )
 }
 
