@@ -10,22 +10,19 @@ import { BrowserRouter, Router, Route, Routes} from 'react-router-dom'
 import AboutUs from './pages/AboutUs'
 import Portfolio  from './pages/Portfolio'
 import ContactMe from './pages/ContactMe'
+import Nav from './components/Nav'
 
 //switch --> routes
 function App() {
   return (
     <div>
       <GlobalStyle/>
-
-     <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<AboutUs/>} />
-          <Route path="/portfolio" element={<Portfolio/>} />
-          <Route path="/contactme" element={<ContactMe/>} />
-        </Routes>
-     
-     </BrowserRouter>
-      
+      <Nav/>
+      <Routes>
+        <Route path="/" element={<AboutUs/>} />
+        <Route path="/portfolio" element={<Portfolio/>} />
+        <Route path="/contact" element={<ContactMe/>} />
+      </Routes>     
 
     </div>
   );
