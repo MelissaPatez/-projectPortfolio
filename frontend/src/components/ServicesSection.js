@@ -3,6 +3,11 @@ import styled from 'styled-components'//css global
 import AboutUs from '../pages/AboutUs'
 import { About, Description, Image } from '../styles' // css focado na pag
 
+//impor icons
+import { faGithubSquare } from '@fortawesome/free-brands-svg-icons'
+import { faLaptopCode, faGraduationCap, faImages } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 const ServicesSection = () => {
     return(
 
@@ -16,7 +21,7 @@ const ServicesSection = () => {
                 <Cards>
                     <Card>
                         <div className='icon'>
-                            icon
+                        <FontAwesomeIcon  icon={ faLaptopCode } size='4x'/>
                             <h3>Portfolio</h3>
                         </div>
                         <p>Check my work on my Portfolio</p>
@@ -24,7 +29,7 @@ const ServicesSection = () => {
 
                     <Card>
                         <div className='icon'>
-                            icon
+                        <FontAwesomeIcon  icon={ faGraduationCap } size='4x'/>
                             <h3>Courses</h3>
                         </div>
                         <p>Check my Courses</p>
@@ -32,7 +37,7 @@ const ServicesSection = () => {
 
                     <Card>
                         <div className='icon'>
-                            icon
+                        <FontAwesomeIcon  icon={ faImages } size='4x'/>
                             <h3>Hobbies</h3>
                         </div>
                         <p>Check my Hobbies</p>
@@ -40,7 +45,7 @@ const ServicesSection = () => {
 
                     <Card>
                         <div className='icon'>
-                            icon
+                            <FontAwesomeIcon  icon={ faGithubSquare } size='4x'/>
                             <h3>Github</h3>
                         </div>
                         <p>Check my Github</p>
