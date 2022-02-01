@@ -1,6 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'//css global
 
+import { faGithubSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 const ContactMe = () => {
     return (
         <ContactStyled>
@@ -19,12 +22,12 @@ const ContactMe = () => {
                 <Network>
                     
                     <Social href='https://github.com/MelissaPatez' target='_blank'>
-                        icon
+                        <FontAwesomeIcon icon={faGithubSquare} size='4x'/>
                         <h3>github.com/MelissaPatez</h3>
                     </Social>
 
-                    <Social>
-                        icon
+                    <Social href='https://www.linkedin.com/in/melissa-patez' target='_blank'>
+                        <FontAwesomeIcon icon={faLinkedin} size='4x'/>
                         <h3>LinkedIn</h3>
                     </Social>
                     
@@ -69,6 +72,11 @@ const Social = styled.a`
         background: #7a7e85;
         cursor: pointer; 
     }
+    h3{
+        color: grey;
+        margin: 2rem;
+    }
+    color: inherit;
 `;
 
 export default ContactMe
