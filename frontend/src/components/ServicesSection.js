@@ -12,9 +12,9 @@ const ServicesSection = () => {
     return(
 
         <Services>
-            <Image>
+            <Images>
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9vZDR_C84-RC5IegITqF5d5_H5NKb4Fjj6w&usqp=CAU"/>
-            </Image>
+            </Images>
 
             <ServiceDescription>
                 <h2> Things I do</h2>
@@ -62,8 +62,11 @@ const ServicesSection = () => {
 
 //sobreescrever styled About
 const Services = styled(About)`
+    display: flex;
+
     h2{
         padding-top: 5rem;
+        
     }
     p{
         width: 70%;
@@ -73,6 +76,7 @@ const Services = styled(About)`
 
 const ServiceDescription = styled(Description)`
     flex: 2;
+
 `;
 
 //display: flex; --> distribui as divs lado a lado
@@ -82,7 +86,7 @@ const ServiceDescription = styled(Description)`
 const Cards = styled.div`
     display: flex;
     flex-wrap: wrap;
-    padding: 1rem;
+    padding: 5rem;
 `;
 
 const Card = styled.div`    
@@ -100,4 +104,8 @@ const Card = styled.div`
     }
 `;
 
+const Images = styled(Image)`
+    padding: 6rem; 
+
+`;
 export default ServicesSection
