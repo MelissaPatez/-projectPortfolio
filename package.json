@@ -6,9 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "backend": "nodemon server.js",
-    "frontend": "cd frontend && yarn start",
+    "frontend": "yarn start --prefix frontend",
     "dev": "concurrently \"npm run backend\" \"npm run frontend\" ",
-    "start": "node server.js"
+    "start": "node server.js",
+    "heroku-postbuild": "npm install --prefix frontend && npm run build --prefix frontend"
   },
   "repository": {
     "type": "git",
